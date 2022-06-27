@@ -1,19 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
 export default function App() {
 
   const [people, setPeople] = useState([
     { name: 'zey', id:'1'},
     { name: 'erva', id:'2'},
-    { name: 'alp', id:'3'},
-    { name: 'muzo',id:'4'},
-    { name: 'süho', id:'5'},
-    { name: 'haso', id:'6'},
-    { name: 'fero', id:'7'},
-    { name: 'sudo', id:'8'}
+    { name: 'zey', id:'3'},
+    { name: 'erva', id:'4'},
+    { name: 'zey', id:'5'},
+    { name: 'erva', id:'6'},
+    { name: 'zey', id:'7'},
+    { name: 'erva', id:'8'},
+    { name: 'zey', id:'9'},
+    { name: 'erva', id:'10'},
+    { name: 'zey', id:'11'},
+    { name: 'erva', id:'12'},
   ])
+
+  const pressHandler = (id) => {
+    console.log(id);
+    setPeople((prevPeople) => {
+      return prevPeople.filter(person => person.id != id)
+    });
+  }
 
   return (
     <View style={styles.container}>
@@ -22,7 +33,9 @@ export default function App() {
         keyExtractor={(item)=> item.id }
         data={people}
         renderItem={({item}) => (
-          <Text style={styles.item}>{item.name}</Text>
+          <TouchableOpacity onPress={()=> pressHandler(item.id)}>
+            <Text style={styles.item}>{item.name}</Text>
+          </TouchableOpacity>
         )}
       />
     </View>
