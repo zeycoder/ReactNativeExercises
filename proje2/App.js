@@ -38,7 +38,6 @@ export default function App() {
     <TouchableNativeFeedback onPress={() => {
       Keyboard.dismiss();
       console.log('dismissed keyboard')
-      
     }}>
       <View style={styles.container}>
         <Header/>
