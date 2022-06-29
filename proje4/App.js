@@ -7,7 +7,7 @@ function HomeScreen( {navigation} ) {
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 24}}>Home Screen</Text>
-      <FlatList
+      <FlatList 
         data={[
           { not: '1.not', key:1, mesaj: '1.mesaj' },
           { not: '2.not', key:2, mesaj: '2.mesaj' },
@@ -17,7 +17,8 @@ function HomeScreen( {navigation} ) {
           { not: '6.not', key:6, mesaj: '6.mesaj' },
           { not: '7.not', key:7, mesaj: '7.mesaj' }
         ]}
-        renderItem={({item,index})=> <Text> {index+1}:{item.not} </Text>}
+        renderItem={({item,index})=> 
+        <Text style={{fontSize:24}} onPress={() => navigation.navigate('Details') } > {index+1}:{item.not} </Text>}
       />
       <Button title='Details page' onPress={() => navigation.navigate('Details')} />
     </View>
@@ -26,8 +27,9 @@ function HomeScreen( {navigation} ) {
 
 function DetailsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
+    <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{fontSize: 24}} >Details Screen</Text>
+      <Text></Text>
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
