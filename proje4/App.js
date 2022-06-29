@@ -9,13 +9,13 @@ function HomeScreen( {navigation} ) {
       <Text style={{fontSize: 24}}>Home Screen</Text>
       <FlatList
         data={[
-          { not: '1.not' },
-          { not: '2.not' },
-          { not: '3.not' },
-          { not: '4.not' },
-          { not: '5.not' },
-          { not: '6.not' },
-          { not: '7.not' }
+          { not: '1.not', key:1, mesaj: '1.mesaj' },
+          { not: '2.not', key:2, mesaj: '2.mesaj' },
+          { not: '3.not', key:3, mesaj: '3.mesaj' },
+          { not: '4.not', key:4, mesaj: '4.mesaj' },
+          { not: '5.not', key:5, mesaj: '5.mesaj' },
+          { not: '6.not', key:6, mesaj: '6.mesaj' },
+          { not: '7.not', key:7, mesaj: '7.mesaj' }
         ]}
         renderItem={({item,index})=> <Text> {index+1}:{item.not} </Text>}
       />
