@@ -16,9 +16,17 @@ function DetailsScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
-      <Button title='Home page' onPress={() => navigation.navigate('Home')} />
+      <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
+}
+
+function AboutScreen({navigate}){
+  return(
+    <View style={ {flex: 1, alignItems: 'center', justifyContent: 'center'} }>
+      <Text>About Screen</Text>
+    </View>
+  )
 }
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +37,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name='About' component={AboutScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
