@@ -2,11 +2,13 @@ import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { FlatList } from 'react-native-web';
 
 function HomeScreen( {navigation} ) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+    <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{fontSize: 24}}>Home Screen</Text>
+      
       <Button title='Details page' onPress={() => navigation.navigate('Details')} />
     </View>
   );
