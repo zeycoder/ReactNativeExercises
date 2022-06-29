@@ -32,9 +32,8 @@ function HomeScreen( {navigation} ) {
 
 function DetailsScreen({route, navigation}) {
 
-  const pressHandler = (key) => {
+  //const pressHandler = (key) => {
 
-  }
 
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
