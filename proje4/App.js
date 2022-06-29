@@ -20,16 +20,26 @@ function HomeScreen( {navigation} ) {
         renderItem={({item,index})=> 
         <Text style={{fontSize:24}} onPress={() => navigation.navigate('Details') } > {index+1}:{item.not} </Text>}
       />
-      <Button title='Details page' onPress={() => navigation.navigate('Details')} />
+      <Button title='Details page' onPress={() => { navigation.navigate('Details',{
+        not: '1.not',
+        key: 1,
+        mesaj: '1.mesaj',
+      });
+      }} />
     </View>
   );
 }
 
-function DetailsScreen({navigation}) {
+function DetailsScreen({route, navigation}) {
+
+  const pressHandler = (key) => {
+
+  }
+
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 24}} >Details Screen</Text>
-      <Text></Text>
+       {/* <Text>{JSON.stringify(mesaj)}  </Text> */}
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
@@ -49,9 +59,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name='About' component={AboutScreen} />
+        <Stack.Screen name="Home" options={{title: 'Anasayfa'}} component={HomeScreen} />
+        <Stack.Screen name="Details" options={{title: 'Detaylar'}} component={DetailsScreen} />
+        <Stack.Screen name='About' options={{title: 'Hakkında'}} component={AboutScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
