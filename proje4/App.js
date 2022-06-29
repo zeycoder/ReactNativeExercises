@@ -1,14 +1,24 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, FlatList } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { FlatList } from 'react-native-web';
 
 function HomeScreen( {navigation} ) {
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 24}}>Home Screen</Text>
-      
+      <FlatList
+        data={[
+          { not: '1.not' },
+          { not: '2.not' },
+          { not: '3.not' },
+          { not: '4.not' },
+          { not: '5.not' },
+          { not: '6.not' },
+          { not: '7.not' }
+        ]}
+        renderItem={({item,index})=> <Text> {index+1}:{item.not} </Text>}
+      />
       <Button title='Details page' onPress={() => navigation.navigate('Details')} />
     </View>
   );
