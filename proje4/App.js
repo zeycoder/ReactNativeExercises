@@ -75,4 +75,5 @@ const styles = StyleSheet.create({
   baslik:{fontSize: 34, color:'red' },
 
 })
+
 export default App;
