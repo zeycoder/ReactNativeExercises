@@ -21,14 +21,13 @@ const veri = [
 
 function HomeScreen( {navigation} ) {
   
-  //const [veri, setVeri] = useState(0)
   return (
     <View style={styles.container}>
       <Text style={styles.baslik}>Home Screen</Text>
       <FlatList 
-        data={veri}
-        renderItem={({item,index})=> 
-        <Text style={styles.text} onPress={() => this.props.navigation.navigate('Details', {...item}) } > {index+1}:{item.not} </Text>}
+        data={veri} 
+        renderItem={({item})=> 
+        <Text style={styles.text} onPress={() => this.props.navigation.navigate('Details', {...item}) } >{item.not} </Text>}
         keyExtractor={item=>item.key}
 
       />
@@ -43,7 +42,7 @@ function DetailsScreen({ navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.baslik} >Details Screen</Text>
-        <Text>{this.props.veri.mesaj[index]}  </Text> 
+        <Text>{veri.mesaj}  </Text> 
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
