@@ -29,7 +29,6 @@ function HomeScreen( {navigation} ) {
         renderItem={({item})=> 
         <Text style={styles.text} onPress={() => this.props.navigation.navigate('Details', {...item}) } >{item.not} </Text>}
         keyExtractor={item=>item.key}
-
       />
       <Button title='Details page' onPress={() => { navigation.navigate('Details');
       }} />
@@ -76,5 +75,4 @@ const styles = StyleSheet.create({
   baslik:{fontSize: 34, color:'red' },
 
 })
-
 export default App;
