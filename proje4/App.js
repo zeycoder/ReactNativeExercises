@@ -1,6 +1,6 @@
 //import * as React from 'react';
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, RefreshControl, Platform } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -21,21 +21,16 @@ const veri = [
 
 function HomeScreen( {navigation} ) {
   const [refreshing, setRefreshing] = useState(false)
-  const onRefreshing = () => {
-    setRefreshing(true)
-    setTimeout(() => {
-      setRefreshing(false)
-    }, 1500);
-  }
+
+  //const [veri, setVeri] = useState(0)
   return (
-    <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{fontSize: 34, color:'red' }}>Home Screen</Text>
+    <View style={styles.container}>
+      <Text style={styles.baslik}>Home Screen</Text>
       <FlatList 
         data={veri}
         renderItem={({item,index})=> 
-        <Text style={{fontSize:30}} onPress={() => navigation.navigate('Details', {...item}) } > {index+1}:{item.not} </Text>}
+        <Text style={styles.text} onPress={() => navigation.navigate('Details', {...item}) } > {index+1}:{item.not} </Text>}
         keyExtractor={item=>item.key}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefreshing} />}
 
       />
       <Button title='Details page' onPress={() => { navigation.navigate('Details');
@@ -47,9 +42,9 @@ function HomeScreen( {navigation} ) {
 function DetailsScreen({route, navigation}) {
   
   return (
-    <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{fontSize: 24}} >Details Screen</Text>
-        <Text>{JSON.stringify(mesaj)}  </Text> 
+    <View style={styles.container}>
+      <Text style={styles.text} >Details Screen</Text>
+        <Text>{veri.mesaj}  </Text> 
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
@@ -57,7 +52,7 @@ function DetailsScreen({route, navigation}) {
 
 function AboutScreen(){
   return(
-    <View style={ {flex: 1, alignItems: 'center', justifyContent: 'center'} }>
+    <View style={ styles.container1 }>
       <Text>About Screen</Text>
     </View>
   )
@@ -76,5 +71,13 @@ function App() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { paddingTop:40 , alignItems: 'center', justifyContent: 'center' },
+  text:{fontSize: 30},
+  baslik:{fontSize: 34, color:'red' },
+  container1:{flex: 1, alignItems: 'center', justifyContent: 'center'},
+
+})
 
 export default App;
