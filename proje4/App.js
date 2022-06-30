@@ -1,6 +1,6 @@
 //import * as React from 'react';
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, RefreshControl } from 'react-native';
+import { View, Text, Button, FlatList, RefreshControl, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -20,16 +20,13 @@ const veri = [
 ]
 
 function HomeScreen( {navigation} ) {
-
   const [refreshing, setRefreshing] = useState(false)
-
   const onRefreshing = () => {
     setRefreshing(true)
     setTimeout(() => {
       setRefreshing(false)
     }, 1500);
   }
-
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 34, color:'red' }}>Home Screen</Text>
@@ -49,7 +46,6 @@ function HomeScreen( {navigation} ) {
 
 function DetailsScreen({route, navigation}) {
   
-
   return (
     <View style={{ paddingTop:40 , alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 24}} >Details Screen</Text>
@@ -59,7 +55,7 @@ function DetailsScreen({route, navigation}) {
   );
 }
 
-function AboutScreen({navigate}){
+function AboutScreen(){
   return(
     <View style={ {flex: 1, alignItems: 'center', justifyContent: 'center'} }>
       <Text>About Screen</Text>
