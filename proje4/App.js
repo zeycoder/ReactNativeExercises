@@ -20,8 +20,7 @@ const veri = [
 ]
 
 function HomeScreen( {navigation} ) {
-  const [refreshing, setRefreshing] = useState(false)
-
+  
   //const [veri, setVeri] = useState(0)
   return (
     <View style={styles.container}>
@@ -29,7 +28,7 @@ function HomeScreen( {navigation} ) {
       <FlatList 
         data={veri}
         renderItem={({item,index})=> 
-        <Text style={styles.text} onPress={() => navigation.navigate('Details', {...item}) } > {index+1}:{item.not} </Text>}
+        <Text style={styles.text} onPress={() => this.props.navigation.navigate('Details', {...item}) } > {index+1}:{item.not} </Text>}
         keyExtractor={item=>item.key}
 
       />
@@ -44,7 +43,7 @@ function DetailsScreen({ navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.baslik} >Details Screen</Text>
-        <Text>{veri.mesaj}  </Text> 
+        <Text>{this.props.veri.mesaj[index]}  </Text> 
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
@@ -73,8 +72,8 @@ function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { paddingTop:40 , alignItems: 'center', justifyContent: 'center' },
-  text:{fontSize: 30},
+  container: { paddingTop:30 , alignItems: 'center', justifyContent: 'center' },
+  text:{fontSize: 30, padding:4},
   baslik:{fontSize: 34, color:'red' },
 
 })
