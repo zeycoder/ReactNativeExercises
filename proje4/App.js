@@ -39,11 +39,11 @@ function HomeScreen( {navigation} ) {
   );
 }
 
-function DetailsScreen({route, navigation}) {
+function DetailsScreen({ navigation}) {
   
   return (
     <View style={styles.container}>
-      <Text style={styles.text} >Details Screen</Text>
+      <Text style={styles.baslik} >Details Screen</Text>
         <Text>{veri.mesaj}  </Text> 
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
@@ -52,8 +52,8 @@ function DetailsScreen({route, navigation}) {
 
 function AboutScreen(){
   return(
-    <View style={ styles.container1 }>
-      <Text>About Screen</Text>
+    <View style={ styles.container }>
+      <Text style={styles.baslik}>About Screen</Text>
     </View>
   )
 }
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
   container: { paddingTop:40 , alignItems: 'center', justifyContent: 'center' },
   text:{fontSize: 30},
   baslik:{fontSize: 34, color:'red' },
-  container1:{flex: 1, alignItems: 'center', justifyContent: 'center'},
 
 })
 
