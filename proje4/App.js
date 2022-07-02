@@ -27,7 +27,7 @@ function HomeScreen( {navigation} ) {
       <FlatList 
         data={veri} 
         renderItem={({item})=> 
-        <Text style={styles.text} onPress={() => this.props.navigation.navigate('Details', {...item}) } >{item.not} </Text>}
+        <Text style={styles.text} onPress={() => navigation.navigate('Details', item) } >{item.not} </Text>}
         keyExtractor={item=>item.key}
       />
       <Button title='Details page' onPress={() => { navigation.navigate('Details');
@@ -36,12 +36,12 @@ function HomeScreen( {navigation} ) {
   );
 }
 
-function DetailsScreen({ navigation}) {
-  
+function DetailsScreen({ route, navigation }) {
+  const  item  = route.params;
   return (
     <View style={styles.container}>
       <Text style={styles.baslik} >Details Screen</Text>
-        <Text>{veri.mesaj}  </Text> 
+        <Text>{item.mesaj}:a  </Text> 
       <Button title='About page' onPress={() => navigation.navigate('About')}/>
     </View>
   );
