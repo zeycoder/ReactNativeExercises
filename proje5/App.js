@@ -1,8 +1,9 @@
 import React from "react";
-import {NavigationContainer} from '@react-natigation/nat,ve'
 import Chats from "./screens/Chats";
-import { SafeAreaView } from "react-native";
-import {createStackNavigator} from 'react-navigation/stack'
+import { SafeAreaView, Text } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 const Home = () =>{
   return (
@@ -20,10 +21,15 @@ const Settings = () => {
   )
 }
 
+const MainStack = createNativeStackNavigator()
+
 const App = () => {
   return(
     <NavigationContainer>
-
+      <MainStack.Navigator>
+        <MainStack.Screen name="Home" component={Home} />
+        <MainStack.Screen name="Settings" component={Settings} />
+      </MainStack.Navigator>
     </NavigationContainer>
   )
 }
