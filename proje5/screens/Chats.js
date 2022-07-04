@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
 import {Ionicons} from '@expo/vector-icons'
+import { colors } from "../config/constants";
 
 
 const Chats = () => {
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     avatar:{
         width:50,
         height:50,
-        backgroundColor:'pink',
+        backgroundColor: colors.primary,
         borderRadius:28,
         alignItems:'center',
         justifyContent:'center',
