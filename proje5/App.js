@@ -1,18 +1,12 @@
 import React from "react";
 import Chats from "./screens/Chats";
+import Home from "./screens/Home";
 import { SafeAreaView, Text, Button } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Home = () =>{
-  return (
-    <SafeAreaView>
-      <Text>hi, home</Text>     
-    </SafeAreaView>
-    )
-}
 const Profile = () => {
   return(
     <SafeAreaView>
