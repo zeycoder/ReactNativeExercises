@@ -7,7 +7,6 @@ const Chats = () => {
     return(
         <SafeAreaView>
             
-            <View style={styles.header}/>
             <TouchableOpacity style={styles.row}>
                 <View style={styles.avatar}>
                     <Text style={styles.avatarLabel} >ZA</Text>

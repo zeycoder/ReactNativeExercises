@@ -6,67 +6,71 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Home = ({navigation}) =>{
+const Home = () =>{
   return (
     <SafeAreaView>
-      <Text>hi, home</Text>
-      
+      <Text>hi, home</Text>     
     </SafeAreaView>
     )
 }
-
-const Profile = ({navigation}) => {
+const Profile = () => {
   return(
     <SafeAreaView>
-      <Text>hi, Profile</Text>
-  
+      <Text>hi, Profile</Text> 
     </SafeAreaView>
   )
 }
-
 const Message = ()=>{
   return(
     <SafeAreaView>
       <Text>hi Message</Text>
-      
     </SafeAreaView>
   )
 }
 
-const MainStack = createNativeStackNavigator()
 const Tabs = createBottomTabNavigator();
 
-const App = () => {
+const TabsScreen = () => {
   return(
+    <Tabs.Navigator
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'Home') {
+          iconName = focused
+            ? 'home'
+            : 'home-outline';
+        }
+        else if (route.name === 'Profile') {
+          iconName = focused ? 'md-person' : 'md-person-outline';
+        } 
+        else if (route.name === 'Chats') {
+          iconName = focused ? 'chatbubbles' : 'chatbubbles-outline'
+        }
+
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+    })}
+  >
+    <Tabs.Screen name="Profile" component={Profile} />
+    <Tabs.Screen name="Home" component={Home} />
+    <Tabs.Screen name="Chats" component={Chats} />
+    </Tabs.Navigator>
+  )
+}
+
+const MainStack = createNativeStackNavigator()
+
+const App = () => {
+  return (
     <NavigationContainer>
-      {/* <MainStack.Navigator>
-        <MainStack.Screen name="Home" component={Home} />
-        <MainStack.Screen name="Settings" component={Settings} />
-      </MainStack.Navigator> */}
-      <Tabs.Navigator 
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'home'
-                : 'home-outline';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'md-person' : 'md-person-outline';
-            } else if (route.name === 'Message') {
-              iconName = focused ? 'chatbubbles' : 'chatbubbles-outline'
-            }
-
-            // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
-      >
-        <Tabs.Screen name="Profile" component={Profile} />
-        <Tabs.Screen name="Home" component={Home} />
-        <Tabs.Screen name="Message" component={Message} />
-      </Tabs.Navigator>
+      <MainStack.Navigator 
+        screenOptions={{
+          headerShown: false
+        }}>
+        <MainStack.Screen name="Tabs" component={TabsScreen} />
+      </MainStack.Navigator>
     </NavigationContainer>
   )
 }
