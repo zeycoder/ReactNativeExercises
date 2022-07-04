@@ -52,26 +52,11 @@ const App = () => {
               iconName = focused
                 ? 'home'
                 : 'home-outline';
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'md-person' : 'md-person-outline';
+            } else if (route.name === 'Message') {
+              iconName = focused ? 'chatbubbles' : 'chatbubbles-outline'
             }
-
-            if (route.name === 'Message') {
-              iconName = focused
-                ? 'chatbubbles'
-                : 'chatbubbles-outline';
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
-            }
-            
-            if (route.name === 'Profile') {
-              iconName = focused
-                ? 'md-person'
-                : 'md-person-outline';
-            } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
-            }
-
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
