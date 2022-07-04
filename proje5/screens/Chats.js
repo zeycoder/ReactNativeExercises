@@ -13,7 +13,7 @@ const Chats = () => {
                     <Text style={styles.avatarLabel} >ZA</Text>
                 </View>
                 <View style={styles.textsContainer} >
-                    <Text style={styles.name}>FirstName LastName</Text>
+                    <Text style={styles.name}>Zeynep Arslan</Text>
                     <Text style={styles.subtitle} >Message</Text>
                 </View>
                 <Text >Saat/tarih</Text>
