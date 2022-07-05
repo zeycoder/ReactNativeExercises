@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     },
     avatarLabel:{
         fontSize: 20,
+        color:'white'
     },
     row:{
         flexDirection:'row',

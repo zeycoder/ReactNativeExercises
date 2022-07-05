@@ -1,15 +1,16 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { colors } from "../config/constants";
+import ContactRow from "./ContactRow";
 
 const Post = ({name, onPress}) => {
     return(
         <SafeAreaView>
             <TouchableOpacity style={styles.row} onPress={onPress} >
                 <View style={styles.avatar} >
-                    <Text style={styles.avatarLaber}>{name.split(' ').reduce((prev,current) => `${prev[0]}${current[0]}`)}</Text>
+                    <Text style={styles.avatarLabel}>{name.split(' ').reduce((prev,current) => `${prev[0]}${current[0]}`)}</Text>
                 </View>
-                <Text style={styles.avatarLaber}> {name}</Text>
+                <Text style={styles.name}> {name}</Text>
             </TouchableOpacity>
             <View style={styles.post} />
             <View style={styles.space} />
@@ -33,7 +34,11 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         marginRight:12
     },
-    avatarLaber:{
+    avatarLabel:{
+        fontSize:18,
+        color:'white',
+    },
+    name:{
         fontSize:16,
     },
     row:{
