@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
+import ContactRow from "../components/ContactRow";
 import {Ionicons} from '@expo/vector-icons'
 import { colors } from "../config/constants";
 
@@ -7,64 +8,17 @@ import { colors } from "../config/constants";
 const Chats = () => {
     return(
         <SafeAreaView>
+
+            <ContactRow />
+            <View style={styles.line} />
             
-            <TouchableOpacity style={styles.row}>
-                <View style={styles.avatar}>
-                    <Text style={styles.avatarLabel} >ZA</Text>
-                </View>
-                <View style={styles.textsContainer} >
-                    <Text style={styles.name}>Zeynep Arslan</Text>
-                    <Text style={styles.subtitle} >Message</Text>
-                </View>
-                <Text >Saat/tarih</Text>
-            </TouchableOpacity>
-
-
-
+            <ContactRow />
+            <View style={styles.line} />
+            
+            <ContactRow />
             <View style={styles.line} />
 
-            <TouchableOpacity style={styles.row}>
-                <View style={styles.avatar}>
-                    <Text style={styles.avatarLabel} >ZA</Text>
-                </View>
-                <View style={styles.textsContainer} >
-                    <Text style={styles.name} >Hi, Chats Screen!</Text>
-                    <Text style={styles.subtitle} >Message</Text>
-                </View>
-                <Text >Saat/tarih</Text>
-            </TouchableOpacity>
-
-
-
-            <View style={styles.line} />
-
-            <TouchableOpacity style={styles.row}>
-                <View style={styles.avatar}>
-                    <Text style={styles.avatarLabel} >ZA</Text>
-                </View>
-                <View style={styles.textsContainer} >
-                    <Text style={styles.name} >Hi, Chats Screen!</Text>
-                    <Text style={styles.subtitle} >Message</Text>
-                </View>
-                <Text >Saat/tarih</Text>
-            </TouchableOpacity>
-
-
-
-            <View style={styles.line} />
-
-            <TouchableOpacity style={styles.row}>
-                <View style={styles.avatar}>
-                    <Text style={styles.avatarLabel} >ZA</Text>
-                </View>
-                <View style={styles.textsContainer} >
-                    <Text style={styles.name} >Hi, Chats Screen!</Text>
-                    <Text style={styles.subtitle} >Message</Text>
-                </View>
-                <Text >Saat/tarih</Text>
-            </TouchableOpacity>
-
-
+            <ContactRow />
             <View style={styles.line} />
 
         </SafeAreaView>
