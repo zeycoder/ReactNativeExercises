@@ -2,9 +2,9 @@ import React from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { colors } from "../config/constants";
 
-const ContactRow = ({name, subtitle,}) => {
+const ContactRow = ({name, subtitle, onPress}) => {
     return (
-        <TouchableOpacity style={styles.row}>
+        <TouchableOpacity style={styles.row} onPress={onPress} >
             <View style={styles.avatar}>
                 <Text style={styles.avatarLabel} >{name.split(' ').reduce((prev,current) => `${prev[0]}${current[0]}`)}</Text>
             </View>

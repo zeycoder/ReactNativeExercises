@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
 import ContactRow from "../components/ContactRow";
+import Line from "../components/Line";
 
 
 const Chats = () => {
@@ -10,39 +11,41 @@ const Chats = () => {
             <ContactRow 
                 name='Zeynep Arslan'
                 subtitle='Hi, this is a my first message!'
+                onPress={() => {
+                    alert('Hi, Zeynep Arslan Touched')
+                }}
             />
-            <View style={styles.line} />
+            <Line />
             
             <ContactRow 
                 name='Erva Arslan'
                 subtitle='Hi, this is a my first message!'
+                onPress={() => {
+                    alert('Hi, Erva Arslan Touched')
+                }}
             />
-            <View style={styles.line} />
+            <Line />
             
             <ContactRow 
                 name='Zeynep Arslan'
                 subtitle='Hi, this is a my first message!'
+                onPress={() => {
+                    alert('Hi, Zeynep Arslan Touched')
+                }}
             />
-            <View style={styles.line} />
+            <Line />
 
             <ContactRow 
                 name='Erva Arslan'
                 subtitle='Hi, this is a my first message!'
+                onPress={() => {
+                    alert('Hi, Erva Arslan Touched')
+                }}
             />
-            <View style={styles.line} />
+            <Line />
 
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    
-    line:{
-        marginStart:10,
-        marginEnd:10,
-        height:1,
-        backgroundColor:'#E8E8E8'
-    }
-})
 
 export default Chats;
