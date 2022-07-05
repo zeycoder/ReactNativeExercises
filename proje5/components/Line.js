@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import { colors } from "../config/constants";
 
 const Line = () => {
     return(
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
         marginStart:10,
         marginEnd:10,
         height:1,
-        backgroundColor:'#E8E8E8'
+        backgroundColor:colors.border,
     }
 })
 

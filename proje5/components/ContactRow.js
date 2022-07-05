@@ -2,9 +2,9 @@ import React from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { colors } from "../config/constants";
 
-const ContactRow = ({name, subtitle, onPress}) => {
+const ContactRow = ({name, subtitle, onPress, style}) => {
     return (
-        <TouchableOpacity style={styles.row} onPress={onPress} >
+        <TouchableOpacity style={[styles.row, style]} onPress={onPress} >
             <View style={styles.avatar}>
                 <Text style={styles.avatarLabel} >{name.split(' ').reduce((prev,current) => `${prev[0]}${current[0]}`)}</Text>
             </View>
@@ -12,7 +12,7 @@ const ContactRow = ({name, subtitle, onPress}) => {
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.subtitle} >{subtitle}</Text>
             </View>
-            <Text >Saat/tarih</Text>
+            <Text>Saat/tarih</Text>
         </TouchableOpacity>
     )
 }
