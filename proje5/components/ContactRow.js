@@ -14,7 +14,6 @@ const ContactRow = ({name, subtitle, onPress}) => {
             </View>
             <Text >Saat/tarih</Text>
         </TouchableOpacity>
-        
     )
 }
 

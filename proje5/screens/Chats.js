@@ -7,7 +7,6 @@ import Line from "../components/Line";
 const Chats = () => {
     return(
         <SafeAreaView>
-
             <ContactRow 
                 name='Zeynep Arslan'
                 subtitle='Hi, this is a my first message!'
