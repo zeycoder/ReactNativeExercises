@@ -18,7 +18,7 @@ const Chats = ({navigation}) => {
                 name='Zeynep Arslan'
                 subtitle='Hi, this is a my first message!'
                 onPress={() => {
-                    navigation.navigate('Chat')
+                    navigation.navigate('Chat');
                 }}
             />
             <Line />

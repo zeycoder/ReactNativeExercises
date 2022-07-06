@@ -3,7 +3,7 @@ import { Text } from "react-native";
 
 const Chat = () => {
     return(
-        <Text>Hii ch at screen</Text>
+        <Text>Hi chat screen</Text>
     )
 }
 

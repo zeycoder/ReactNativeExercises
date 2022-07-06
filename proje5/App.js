@@ -11,6 +11,21 @@ import SignUp from "./screens/SignUp";
 import Chat from "./screens/Chat";
 import app from "./libs/firebase";
 
+const ChatsStack = createNativeStackNavigator();
+
+const ChatsScreen = () => {
+  return(
+    <ChatsStack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+    >
+      <ChatsStack.Screen name="Chats" component={Chats} />
+      <ChatsStack.Screen name="Chat" component={Chat} />
+    </ChatsStack.Navigator>
+  )
+}
+
 const Tabs = createBottomTabNavigator();
 
 const TabsScreen = () => {
@@ -40,7 +55,7 @@ const TabsScreen = () => {
 
   >
     
-    <Tabs.Screen name="Chats" component={Chats} />
+    <Tabs.Screen name="Chats" component={ChatsScreen} />
     <Tabs.Screen name="Home" component={Home} />
     <Tabs.Screen name="Profile" component={Profile} />
     </Tabs.Navigator>
@@ -59,7 +74,7 @@ const App = () => {
         mode='modal'
         >
         <MainStack.Screen name="Tabs" component={TabsScreen} />
-        <MainStack.Screen name="SignUp" component={SignUp } />
+        {/* <MainStack.Screen name="SignUp" component={SignUp } /> */}
       </MainStack.Navigator>
     </NavigationContainer>
   )
