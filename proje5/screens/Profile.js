@@ -14,10 +14,23 @@ const Profile = () => {
                 style={styles.contactRow}
             />
             <Line />
+            <Cell
+                title='Share photo'
+                icon='camera-outline'
+                tintColor={colors.gray}
+                onPress={()=>{
+                    alert('Are you sure you want to share a photo?')
+                }}
+            />
             <Cell 
                 title='Logout'
                 icon='exit-outline'
+                tintColor={colors.gray}
+                onPress={()=>{
+                    alert('dont touch me again')
+                }}
             />
+            
 
         </View>
     )

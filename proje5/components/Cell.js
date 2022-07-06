@@ -4,14 +4,13 @@ import { colors } from "../config/constants";
 import {Ionicons} from '@expo/vector-icons';
 
 
-const Cell = ({title, icon}) => {
+const Cell = ({title, icon, tintColor, onPress}) => {
     return(
         <TouchableOpacity 
                 style={styles.cell}
-                onPress={() => {
-                    alert('Hi, You Touched Me !')
-                }}>
-                <View style={styles.iconContainer}>
+                onPress={onPress}>
+                <View style={[styles.iconContainer, {
+        backgroundColor:tintColor  }]}>
                     <Ionicons
                         name={icon}
                         size={26} 
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
     iconContainer:{
         width:32,
         height:32,
-        backgroundColor:colors.red,
         borderRadius:6,
         alignItems:'center',
         justifyContent:'center',
