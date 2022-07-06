@@ -18,7 +18,7 @@ const Chats = ({navigation}) => {
                 name='Zeynep Arslan'
                 subtitle='Hi, this is a my first message!'
                 onPress={() => {
-                    alert('Hi, Zeynep Arslan Touched')
+                    navigation.navigate('Chat')
                 }}
             />
             <Line />
@@ -27,7 +27,7 @@ const Chats = ({navigation}) => {
                 name='Erva Arslan'
                 subtitle='Hi, this is a my first message!'
                 onPress={() => {
-                    alert('Hi, Erva Arslan Touched')
+                    navigation.navigate('Chat')
                 }}
             />
             <Line />
