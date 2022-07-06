@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, SafeAreaView, StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import { colors } from "../config/constants";
+import Button from "../components/Button";
 
 const SignUp = () => {
     return(
@@ -14,12 +15,12 @@ const SignUp = () => {
                     <TextInput style={styles.input} placeholder="Enter your password" />
 
                     <View style={styles.buttonsContainer} >
-                        <TouchableOpacity style={styles.buttonContainer}>
-                            <Text style={styles.buttonLabel}>Sign In</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer}>
-                            <Text style={styles.buttonLabel}>Sign Up</Text>
-                        </TouchableOpacity>
+                        <Button 
+                            title='Sign In'
+                        />
+                        <Button 
+                            title='Sign Up'
+                        />
                     </View>
 
                 </View>
@@ -38,16 +39,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginTop:32,
         
-    },
-    buttonContainer:{
-        backgroundColor:colors.darkGray,
-        paddingHorizontal:18,
-        paddingVertical:12,
-        borderRadius:4,
-    },
-    buttonLabel:{
-        color:'white',
-        fontSize:18,
     },
     contentContainer:{
         padding:26
