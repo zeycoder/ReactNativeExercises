@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from "./config/constants";
+import SignUp from "./screens/SignUp";
 
 const Tabs = createBottomTabNavigator();
 
@@ -54,6 +55,7 @@ const App = () => {
           headerShown: false
         }}>
         <MainStack.Screen name="Tabs" component={TabsScreen} />
+        <MainStack.Screen name="SignUp" component={SignUp } />
       </MainStack.Navigator>
     </NavigationContainer>
   )
