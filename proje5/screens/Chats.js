@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
 import ContactRow from "../components/ContactRow";
 import Line from "../components/Line";
 
 
-const Chats = () => {
+const Chats = ({navigation}) => {
+
+useEffect(() => {
+    const isLoggedIn = false;
+    if(!isLoggedIn) {
+        navigation.navigate('SignUp')
+    }
+}, []);
+
     return(
         <SafeAreaView>
             <ContactRow 

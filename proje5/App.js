@@ -2,7 +2,6 @@ import React from "react";
 import Chats from "./screens/Chats";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
-import { SafeAreaView, Text, Button } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -54,7 +53,9 @@ const App = () => {
       <MainStack.Navigator 
         screenOptions={{
           headerShown: false
-        }}>
+        }}
+        mode='modal'
+        >
         <MainStack.Screen name="Tabs" component={TabsScreen} />
         <MainStack.Screen name="SignUp" component={SignUp } />
       </MainStack.Navigator>
