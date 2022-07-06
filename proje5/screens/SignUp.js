@@ -17,9 +17,11 @@ const SignUp = () => {
                     <View style={styles.buttonsContainer} >
                         <Button 
                             title='Sign In'
+                            varient='secondary'
                         />
                         <Button 
                             title='Sign Up'
+                            varient='primary'
                         />
                     </View>
 

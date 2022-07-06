@@ -2,10 +2,10 @@ import React from "react";
 import { TouchableOpacity, Text,StyleSheet } from "react-native";
 import { colors } from "../config/constants";
 
-const Button = ({title}) => {
+const Button = ({title, varient}) => {
     return(
-        <TouchableOpacity style={styles.buttonContainer} >
-            <Text style={styles.buttonLabel} >{title}</Text>
+        <TouchableOpacity style={[styles.buttonContainer, {backgroundColor:varient === 'primary' ? 'black': 'transparent'}]} >
+            <Text style={[styles.buttonLabel,{color:varient === 'primary' ? 'white' : 'black'}]} >{title}</Text>
         </TouchableOpacity>
     )
 }
