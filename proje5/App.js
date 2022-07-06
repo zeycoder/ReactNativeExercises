@@ -38,9 +38,10 @@ const TabsScreen = () => {
       })}
 
   >
-    <Tabs.Screen name="Profile" component={Profile} />
-    <Tabs.Screen name="Home" component={Home} />
+    
     <Tabs.Screen name="Chats" component={Chats} />
+    <Tabs.Screen name="Home" component={Home} />
+    <Tabs.Screen name="Profile" component={Profile} />
     </Tabs.Navigator>
   )
 }
