@@ -5,13 +5,12 @@ import Line from "../components/Line";
 
 
 const Chats = ({navigation}) => {
-
-useEffect(() => {
-    const isLoggedIn = false;
-    if(!isLoggedIn) {
-        navigation.navigate('SignUp')
-    }
-}, []);
+    useEffect(() => {
+        const isLoggedIn = false;
+        if(!isLoggedIn) {
+            navigation.navigate('SignUp')
+        }
+    }, []);
 
     return(
         <SafeAreaView>

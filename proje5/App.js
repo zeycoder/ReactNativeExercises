@@ -8,6 +8,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from "./config/constants";
 import SignUp from "./screens/SignUp";
+import Chat from "./screens/Chat";
+import app from "./libs/firebase";
 
 const Tabs = createBottomTabNavigator();
 
