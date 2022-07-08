@@ -52,7 +52,6 @@ const TabsScreen = () => {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: 'gray',
       })}
-
   >
     
     <Tabs.Screen name="Chats" component={ChatsScreen} />

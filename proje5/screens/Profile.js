@@ -30,8 +30,6 @@ const Profile = () => {
                     alert('dont touch me again')
                 }}
             />
-            
-
         </View>
     )
 }
