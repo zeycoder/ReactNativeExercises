@@ -1,6 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, StyleSheet, View, ScrollView, TouchableOpacity } from "react-native";
-import { colors } from "../config/constants";
+import { SafeAreaView, Text, StyleSheet, View, ScrollView} from "react-native";
 import Post from "../components/Post";
 
 const Home = () => {
