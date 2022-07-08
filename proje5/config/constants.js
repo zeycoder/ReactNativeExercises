@@ -5,5 +5,4 @@ export const colors = {
     pink: '#FF00FF',
     gray: '#808080',
     darkGray:'#373D5C',
-
 }
