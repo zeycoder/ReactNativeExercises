@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, StyleSheet, View, ScrollView} from "react-native";
+import { SafeAreaView, ScrollView} from "react-native";
 import Post from "../components/Post";
 
 const Home = () => {
