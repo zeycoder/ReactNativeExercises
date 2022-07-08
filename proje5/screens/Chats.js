@@ -21,6 +21,7 @@ const Chats = ({navigation}) => {
                     navigation.navigate('Chat');
                 }}
             />
+
             <Line />
             
             <ContactRow 
@@ -30,6 +31,7 @@ const Chats = ({navigation}) => {
                     navigation.navigate('Chat')
                 }}
             />
+
             <Line />
             
             <ContactRow 
@@ -39,6 +41,7 @@ const Chats = ({navigation}) => {
                     alert('Hi, Zeynep Arslan Touched')
                 }}
             />
+
             <Line />
 
             <ContactRow 
@@ -48,6 +51,7 @@ const Chats = ({navigation}) => {
                     alert('Hi, Erva Arslan Touched')
                 }}
             />
+            
             <Line />
 
         </SafeAreaView>
