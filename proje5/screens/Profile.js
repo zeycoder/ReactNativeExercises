@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet,TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import ContactRow from "../components/ContactRow";
 import { colors } from "../config/constants";
 import Line from "../components/Line";
