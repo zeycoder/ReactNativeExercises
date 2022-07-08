@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import ContactRow from "../components/ContactRow";
 import Line from "../components/Line";
 
@@ -49,7 +49,7 @@ const Chats = ({navigation}) => {
                 }}
             />
             <Line />
-            
+
         </SafeAreaView>
     )
 }
