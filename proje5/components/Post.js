@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { colors } from "../config/constants";
-import ContactRow from "./ContactRow";
 
 const Post = ({name, onPress}) => {
     return(
