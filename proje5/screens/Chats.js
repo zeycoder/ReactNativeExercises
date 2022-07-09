@@ -6,7 +6,16 @@ import Line from "../components/Line";
 const chats=[{
     users: ['z@gmail.com','za@gmail.com'],
     messages:[]
-}
+},{
+    users: ['z@gmail.com','za@gmail.com'],
+    messages:[]
+},{
+    users: ['z@gmail.com','za@gmail.com'],
+    messages:[]
+},{
+    users: ['z@gmail.com','za@gmail.com'],
+    messages:[]
+},
 ]
 
 const Chats = ({navigation}) => {
