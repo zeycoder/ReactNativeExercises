@@ -3,6 +3,11 @@ import { SafeAreaView } from "react-native";
 import ContactRow from "../components/ContactRow";
 import Line from "../components/Line";
 
+const chats=[{
+    users: ['z@gmail.com','za@gmail.com'],
+    messages:[]
+}
+]
 
 const Chats = ({navigation}) => {
     useEffect(() => {
