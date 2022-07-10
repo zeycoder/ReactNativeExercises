@@ -69,4 +69,3 @@ const Chats = ({navigation}) => {
 }
 
 export default Chats;
-
