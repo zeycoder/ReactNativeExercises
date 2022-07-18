@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCZCoT0LN9HWcpA3D4xPPxhKKSslHWuHF8",
@@ -12,7 +13,15 @@ const firebaseConfig = {
   measurementId: "G-DT563QNQNK"
 };
 
+const db = getFirestore(app);
 const auth = getAuth(app);
 const app = initializeApp(firebaseConfig);
+
+async function getCities(db) {
+  const citiesCol = collection(db, 'cities');
+  const citySnapshot = await getDocs(citiesCol);
+  const cityList = citySnapshot.docs.map(doc => doc.data());
+  return cityList;
+}
 
 export default app;
