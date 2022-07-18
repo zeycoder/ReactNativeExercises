@@ -4,16 +4,22 @@ import ContactRow from "../components/ContactRow";
 import Line from "../components/Line";
 
 const chats=[{
-    users: ['z@gmail.com','za@gmail.com'],
+    users: ['z.a@gmail.com','za@gmail.com'],
     messages:[]
 },{
-    users: ['z@gmail.com','za@gmail.com'],
+    users: ['z.a@gmail.com','za@gmail.com'],
     messages:[]
 },{
-    users: ['z@gmail.com','za@gmail.com'],
+    users: ['z.a@gmail.com','za@gmail.com'],
     messages:[]
 },{
-    users: ['z@gmail.com','za@gmail.com'],
+    users: ['z.a@gmail.com','za@gmail.com'],
+    messages:[]
+},{
+    users: ['z.a@gmail.com','za@gmail.com'],
+    messages:[]
+},{
+    users: ['z.a@gmail.com','za@gmail.com'],
     messages:[]
 },
 ]
@@ -28,42 +34,35 @@ const Chats = ({navigation}) => {
 
     return(
         <SafeAreaView>
-            <ContactRow 
-                name='Zeynep Arslan'
-                subtitle='Hi, this is a my first message!'
-                onPress={() => {
-                    navigation.navigate('Chat');
-                }}
-            />
-            <Line />
-            
-            <ContactRow 
-                name='Erva Arslan'
-                subtitle='Hi, this is a my first message!'
-                onPress={() => {
-                    navigation.navigate('Chat')
-                }}
-            />
-            <Line />
-            
-            <ContactRow 
-                name='Zeynep Arslan'
-                subtitle='Hi, this is a my first message!'
-                onPress={() => {
-                    navigation.navigate('Chat')
-                }}
-            />
-            <Line />
+            {/* {chats.map((chat, index) => (
+                <React.Fragment key={index}>
+                    <ContactRow 
+                        name={
+                            chat.users.filter(
+                                x=>x !== firebase.auth().currentUser.email
+                            )[0]
 
-            <ContactRow 
-                name='Erva Arslan'
-                subtitle='Hi, this is a my first message!'
-                onPress={() => {
-                    navigation.navigate('Chat')
-                }}
-            />
-            <Line />
-
+                        }
+                        subtitle='Hi, this is a my first message!'
+                        onPress={() => {
+                            navigation.navigate('Chat');
+                        }}
+                    />
+                    <Line />
+                </React.Fragment>
+            ))} */}
+                {chats.map((chat, index) => (
+                <React.Fragment key={index}>
+                    <ContactRow 
+                        name='Zeynep Arslan'
+                        subtitle='Hi, this is a my first message!'
+                        onPress={() => {
+                            navigation.navigate('Chat');
+                        }}
+                    />
+                    <Line />
+                </React.Fragment>
+                ))}
         </SafeAreaView>
     )
 }

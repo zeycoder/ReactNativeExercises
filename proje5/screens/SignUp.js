@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, SafeAreaView, StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import { colors } from "../config/constants";
 import Button from "../components/Button";
 
 const SignUp = () => {
+    const [name,setName] = useState('')
+    const [email,setEmail]= useState('')
+    const [password,setPassword] = useState('')
     return(
         <View style={styles.container}>
             <SafeAreaView>
 
                 <View style={styles.contentContainer} >
                     <Text style={styles.title} > Create New Acoount</Text>
-                    <TextInput style={styles.input} placeholder="Enter your name" />
-                    <TextInput style={styles.input} placeholder="Enter your email" />
-                    <TextInput style={styles.input} placeholder="Enter your password" />
+                    <TextInput 
+                        style={styles.input} 
+                        placeholder="Enter your name"
+                        value={name}
+                        onChangeText={text => setName(text)}
+                    />
+                    <TextInput 
+                        style={styles.input} 
+                        placeholder="Enter your email" 
+                        value={email}
+                        onChangeText={text => setEmail(text)}
+                    />
+                    <TextInput 
+                        style={styles.input} 
+                        placeholder="Enter your password" 
+                        value={password}
+                        onChangeText={text => setPassword(text)}    
+                    />
 
                     <View style={styles.buttonsContainer} >
                         <Button 
