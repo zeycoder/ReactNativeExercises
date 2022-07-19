@@ -49,10 +49,9 @@ const styles = StyleSheet.create({
   button:{
     height: '100%',
     justifyContent: 'center',
-    paddingBottom:100,
   },
   text:{
     fontSize:18,
-    color :'red' ,
+    color :'red',
   }
 });
