@@ -1,33 +1,56 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView, TextInput } from 'react-native';
 
 // Api çekme (fetch), useState ve useEffect kullanma örneğidir.
 export default function App() {
-
-  const [todos, setTodos] = useState([]);
-  const [submit, setSubmit] = useState(false);
+  
+  const [todos, setTodos] = useState([])
+  const [submit, setSubmit] = useState(false)
 
   useEffect(() => {
-    async function getTodos(){
-      const cevap = await fetch('https://jsonplaceholder.typicode.com/todos')
-      const veri = await cevap.json()
-      setTodos(veri)
+    async function getTodos() {
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          text: "gfjyffyj"
+        })
+      })
+      const data = await response.json()
+      console.log(data)
     }
     if(submit){
-      getTodos();
+      getTodos()
     }
   },[submit])
-  function goster() {
+  function fetchTodos(){
     setSubmit(true)
-  }  
+  }
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Button style={styles.button} title='Tıkla' onPress={goster}></Button>
+        <View style={styles.safearea} >
+          <Text style={{fontSize:25, margin:8}} >Apiden çekilen bilgiler</Text>
+          <TextInput style={styles.input} placeholder='İstediğinizi giriniz.'/>
+          <Button title='Tıkla ve Listele' onPress={fetchTodos}></Button>
+        </View>
         {todos.map((todo) => {
-          return <Text key={todo.id}>{todo.title}</Text>
+          return (
+            <View style={styles.g} >
+              <Text 
+                key={todo.id} 
+              >{todo.id} </Text>
+              <Text 
+                key={todo.id} 
+                style={ todo.completed ?  [styles.true] : [styles.false] } 
+              > -- {todo.title} .. {todo.completed ? "true" : "false" }
+              </Text>
+            </View>
+          )
         })}
         
         <StatusBar style="auto" />
@@ -40,17 +63,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin:20,
-    paddingTop: 50,
+    margin: 15,
   },
-  button:{
-    height: '100%',
-    justifyContent: 'center',
+  safearea:{
+    marginTop:20,
+    padding:50,
   },
-  text:{
-    fontSize:18,
-    color :'red',
-  }
+  true:{
+    color: 'green',
+  },
+  false:{
+    color:'red',
+  },
+  g:{
+    flexDirection:'row'
+  },
+  input:{
+    alignItems:'center',
+    borderWidth: 2,
+    padding: 10,
+    marginBottom:15,
+  },
 });
