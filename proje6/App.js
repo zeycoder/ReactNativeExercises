@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, ScrollView, SafeAreaView } from 'react-native';
 
+// Api çekme (fetch), useState ve useEffect kullanma örneğidir.
 export default function App() {
 
   const [todos, setTodos] = useState([]);
@@ -17,12 +18,11 @@ export default function App() {
     if(submit){
       getTodos();
     }
-    
   },[submit])
   function goster() {
     setSubmit(true)
-  }
-  
+  }  
+
   return (
     <ScrollView>
       <View style={styles.container}>
