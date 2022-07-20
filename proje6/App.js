@@ -13,7 +13,6 @@ export default function App() {
       const cevap = await fetch('https://jsonplaceholder.typicode.com/todos')
       const veri = await cevap.json()
       setTodos(veri)
-
     }
     if(submit){
       getTodos();
