@@ -30,7 +30,12 @@ export default function App() {
         </View>
         {todos.map((todo) => {
           return (
-            <Text key={todo.id}> {todo.id} -- {todo.title} .. {todo.completed ? "true" ||"pwldkodl" : "false" }</Text>
+            
+            <Text 
+              key={todo.id} 
+              style={ todo.completed ?  [styles.true] : [styles.false] } 
+            >{todo.id} -- {todo.title} .. {todo.completed ? "true" : "false" }
+            </Text>
           )
         })}
         
@@ -49,5 +54,11 @@ const styles = StyleSheet.create({
   safearea:{
     marginTop:20,
     padding:50,
+  },
+  true:{
+    color: 'purple',
+  },
+  false:{
+    color:'red',
   },
 });
