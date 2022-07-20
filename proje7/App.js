@@ -30,12 +30,16 @@ export default function App() {
         </View>
         {todos.map((todo) => {
           return (
-            
-            <Text 
-              key={todo.id} 
-              style={ todo.completed ?  [styles.true] : [styles.false] } 
-            >{todo.id} -- {todo.title} .. {todo.completed ? "true" : "false" }
-            </Text>
+            <View style={styles.g} >
+              <Text 
+                key={todo.id} 
+              >{todo.id} </Text>
+              <Text 
+                key={todo.id} 
+                style={ todo.completed ?  [styles.true] : [styles.false] } 
+              > -- {todo.title} .. {todo.completed ? "true" : "false" }
+              </Text>
+            </View>
           )
         })}
         
@@ -56,9 +60,12 @@ const styles = StyleSheet.create({
     padding:50,
   },
   true:{
-    color: 'purple',
+    color: 'green',
   },
   false:{
     color:'red',
+  },
+  g:{
+    flexDirection:'row'
   },
 });
