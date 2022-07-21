@@ -36,7 +36,6 @@ function App(){
     }else{
       setCurrentPlayer(prev => prev === 'X' ? 'O' : 'X')
     }
-    
   }
 
   const handleReset = () => {
@@ -77,5 +76,4 @@ function App(){
     </VStack>
   )
 }
-
 export default App;
