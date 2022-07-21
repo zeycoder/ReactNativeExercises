@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 
 // Api çekme (fetch), useState ve useEffect kullanma örneğidir.
 export default function App() {
@@ -10,17 +10,10 @@ export default function App() {
 
   useEffect(() => {
     async function getTodos() {
-      const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          text: "gfjyffyj"
-        })
-      })
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos')
       const data = await response.json()
       console.log(data)
+      setTodos(data)
     }
     if(submit){
       getTodos()
@@ -35,7 +28,6 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.safearea} >
           <Text style={{fontSize:25, margin:8}} >Apiden çekilen bilgiler</Text>
-          <TextInput style={styles.input} placeholder='İstediğinizi giriniz.'/>
           <Button title='Tıkla ve Listele' onPress={fetchTodos}></Button>
         </View>
         {todos.map((todo) => {
@@ -77,11 +69,5 @@ const styles = StyleSheet.create({
   },
   g:{
     flexDirection:'row'
-  },
-  input:{
-    alignItems:'center',
-    borderWidth: 2,
-    padding: 10,
-    marginBottom:15,
   },
 });
