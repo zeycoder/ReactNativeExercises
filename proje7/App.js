@@ -37,9 +37,10 @@ export default function App() {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.safearea} >
-          <Text style={{fontSize:25, margin:8}} >Apiden çekilen bilgiler</Text>
+          <Text style={{fontSize:19, marginBottom:13, marginTop:50}} >Apiye göndermek isitediğiniz bilgi</Text>
           <TextInput onChangeText={(e) => setText(e)} style={styles.input} defaultValue={text} placeholder='İstediğinizi giriniz.'/>
           <Button title='Tıkla ve Listele' onPress={fetchTodos}></Button>
+          <Text style={{marginTop:20, textAlign:'center'}}>{text}</Text>
         </View>
         {todos.map((todo) => {
           return (
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    margin: 15,
+    marginBottom: 10,
   },
   safearea:{
     marginTop:20,
