@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Text, TouchableOpacity, Button } from 'react-native';
 import {HStack, VStack, Flex} from 'react-native-flex-layout';
+import checkWinner from './checkWinner';
 
 function Box({ value, onPress, disabled, highlighted }) {
   return(
@@ -26,7 +27,16 @@ function App(){
     const newBoard = [...board];
     newBoard[index] = currentPlayer;
     setBoard(newBoard);
-    setCurrentPlayer(prev => prev === 'X' ? 'O' : 'X')
+
+    const winnerLine = checkWinner(newBoard)
+    if(winnerLine){
+      setHighlighted(winnerLine)
+      setWinner(currentPlayer)
+      alert(`${currentPlayer} won!`)
+    }else{
+      setCurrentPlayer(prev => prev === 'X' ? 'O' : 'X')
+    }
+    
   }
 
   const handleReset = () => {
