@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Css from './css';
-import { styles } from './css';
+import { styles } from './Css';
 
 export default function App() {
   return (
     <View>
-      <Text style={Css.style.a} >wpedoşwdlep</Text>
+      <Text style={styles.a} >wpedoşwdlep</Text>
       <StatusBar style="auto" />
     </View>
   );
