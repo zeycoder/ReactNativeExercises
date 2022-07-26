@@ -1,5 +1,5 @@
 import React from "react";
-import { Text , View } from "react-native";
+import { Text , View , TextInput } from "react-native";
 import styles from "./src/Css";
 
 const allName = (firstName, lastName) => {
@@ -9,7 +9,8 @@ const allName = (firstName, lastName) => {
 const Me =() => {
   return (
     <View style={styles.container}>
-      <Text  > Selam benim adım {allName('Zeynep','Arslan')}. Memnun oldums :) !</Text>
+      <Text  > Selam ! Benim adım {allName('Zeynep','Arslan')}. Senin adın ne ? :) </Text>
+      <TextInput style={styles.te} placeholder="Benim adım ..."></TextInput>
     </View>
   )
 }
