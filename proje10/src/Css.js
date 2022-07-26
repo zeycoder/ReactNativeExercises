@@ -8,11 +8,11 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     textInput:{
-        width:100,
-        height:50,
-        border:2,
-        borderColor:'black',
-        backgroundColor:'red'
+        height: 40,
+        width: 150,
+        borderColor: 'black',
+        borderWidth: 1,
+        margin:15,
     },
 })
 export default styles;
