@@ -1,12 +1,17 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text , View } from "react-native";
+import styles from "./src/Css";
 
 const allName = (firstName, lastName) => {
   return firstName+ ' ' +lastName
 }
 
 const Me =() => {
-  return <Text> Selam benim adım {allName('Zeynep','Arslan')} :) !</Text>
+  return (
+    <View style={styles.container}>
+      <Text  > Selam benim adım {allName('Zeynep','Arslan')}. Memnun oldums :) !</Text>
+    </View>
+  )
 }
 
 export default Me;
