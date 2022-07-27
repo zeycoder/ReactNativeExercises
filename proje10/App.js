@@ -33,12 +33,14 @@ const People = (props) => {
 }
 
 const Me =() => {
+  const [text, setText] = useState(' ')
   return (
     <View style={styles.container}>
       <People name='ıııı' />
       <People name='Zey' />
       <Text  > Selam ! Benim adım {allName('Zeynep','Arslan')}. Senin adın ne ? :) </Text>
-      <TextInput style={styles.textInput} placeholder="Benim adım ..."></TextInput>
+      <TextInput style={styles.textInput} placeholder="pizzaaa ..." onChangeText={newText => setText(newText)} defaultValue={text} ></TextInput>
+      <Text > {text.split(' ').map((word)=>word&&'🍕').join(' ')} </Text>
       <Cat cat='miyuv' />
     </View>
   )
