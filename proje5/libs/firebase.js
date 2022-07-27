@@ -15,7 +15,20 @@ const firebaseConfig = {
 
 const db = getFirestore(app);
 const auth = getAuth(app);
+// let app;
+// if(firebase.apps.lenght===0){
+//   app = firebase.initializeApp(firebaseConfig);
+// }else{
+//   app = firebase.app()
+// }
 const app = initializeApp(firebaseConfig);
+
+//const auth = getAuth(app);
+// const db = firebase.data()
+
+// const db = getFirestore(app);
+// const auth = getAuth(app);
+
 
 async function getCities(db) {
   const citiesCol = collection(db, 'cities');
