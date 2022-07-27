@@ -41,7 +41,6 @@ const Chats = ({navigation}) => {
                             chat.users.filter(
                                 x=>x !== firebase.auth().currentUser.email
                             )[0]
-
                         }
                         subtitle='Hi, this is a my first message!'
                         onPress={() => {
@@ -54,7 +53,7 @@ const Chats = ({navigation}) => {
                 {chats.map((chat, index) => (
                 <React.Fragment key={index}>
                     <ContactRow 
-                        name='Zeynep Arslan'
+                        name='zeynep arslan'
                         subtitle='Hi, this is a my first message!'
                         onPress={() => {
                             navigation.navigate('Chat');
