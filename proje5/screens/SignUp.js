@@ -4,9 +4,11 @@ import { colors } from "../config/constants";
 import Button from "../components/Button";
 
 const SignUp = () => {
+    
     const [name,setName] = useState('')
     const [email,setEmail]= useState('')
     const [password,setPassword] = useState('')
+
     return(
         <View style={styles.container}>
             <SafeAreaView>
@@ -33,6 +35,7 @@ const SignUp = () => {
                     />
 
                     <View style={styles.buttonsContainer} >
+                        
                         <Button 
                             title='Sign In'
                             varient='secondary'
@@ -78,9 +81,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingVertical:12,
         borderRadius:4,
-
     },
-    
 })
 
 export default SignUp;
