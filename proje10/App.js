@@ -39,7 +39,7 @@ const Me =() => {
       <People name='ıııı' />
       <People name='Zey' />
       <Text  > Selam ! Benim adım {allName('Zeynep','Arslan')}. Senin adın ne ? :) </Text>
-      <TextInput style={styles.textInput} placeholder="pizzaaa ..." onChangeText={newText => setText(newText)} defaultValue={text} ></TextInput>
+      <TextInput style={styles.textInput} placeholder="pizzaaa..." onChangeText={newText => setText(newText)} defaultValue={text} ></TextInput>
       <Text > {text.split(' ').map((word)=>word&&'🍕').join(' ')} </Text>
       <Cat cat='miyuv' />
     </View>
