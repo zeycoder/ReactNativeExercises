@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Text , View , TextInput, Button, ScrollView } from "react-native";
+import { Text , View , TextInput, Button, ScrollView, FlatList } from "react-native";
 import styles from "./src/Css";
 
 const allName = (firstName, lastName) => {
@@ -35,8 +35,28 @@ const People = (props) => {
 const Scroll = () => {
   return(
     <ScrollView>
-      <Text style={{fontSize:200}} >Merhaba ben zeynep</Text>
+      <Text style={{ fontSize:120}} >Merhaba ben zeynep</Text>
     </ScrollView>
+  )
+}
+
+const List = () => {
+  return(
+    <FlatList
+      style={{marginVertical:30}}
+      data={[
+        {key:'zeynep'},
+        {key:'erva'},
+        {key:'muzo'},
+        {key:'zeynep'},
+        {key:'erva'},
+        {key:'zeynep'},
+        {key:'erva'},
+        {key:'zeynep'},
+        {key:'erva'},
+      ]}
+      renderItem={({item}) => <Text>{item.key} </Text> }
+    />
   )
 }
 
@@ -50,7 +70,9 @@ const Me =() => {
       <TextInput style={styles.textInput} placeholder="pizzaaa..." onChangeText={newText => setText(newText)} defaultValue={text} ></TextInput>
       <Text > {text.split(' ').map((word)=>word&&'🍕').join(' ')} </Text>
       <Cat cat='miyuv' />
-      <Scroll/>
+      <Scroll />
+      <List />
+      
     </View>
   )
 }
