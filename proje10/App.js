@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Text , View , TextInput, Button } from "react-native";
+import { Text , View , TextInput, Button, ScrollView } from "react-native";
 import styles from "./src/Css";
 
 const allName = (firstName, lastName) => {
@@ -11,7 +11,7 @@ const Cat = (props) => {
   const [isHungry, setIsHungry] = useState(true)
 
   return(
-    <View>
+    <View style={{marginBottom:20}} >
       <Text> Meow, ben {props.cat} ve { isHungry ? 'açım' : 'doydum :)' }  </Text>
       <Button 
         onPress={() => {
@@ -32,6 +32,14 @@ const People = (props) => {
   )
 }
 
+const Scroll = () => {
+  return(
+    <ScrollView>
+      <Text style={{fontSize:200}} >Merhaba ben zeynep</Text>
+    </ScrollView>
+  )
+}
+
 const Me =() => {
   const [text, setText] = useState(' ')
   return (
@@ -42,6 +50,7 @@ const Me =() => {
       <TextInput style={styles.textInput} placeholder="pizzaaa..." onChangeText={newText => setText(newText)} defaultValue={text} ></TextInput>
       <Text > {text.split(' ').map((word)=>word&&'🍕').join(' ')} </Text>
       <Cat cat='miyuv' />
+      <Scroll/>
     </View>
   )
 }
