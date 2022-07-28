@@ -43,7 +43,7 @@ const Scroll = () => {
 const List = () => {
   return(
     <FlatList
-      style={{marginVertical:30}}
+      style={{marginVertical:40}}
       data={[
         {key:'zeynep'},
         {key:'erva'},
