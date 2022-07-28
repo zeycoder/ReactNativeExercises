@@ -60,10 +60,20 @@ const List = () => {
   )
 }
 
+const Style = () => {
+	return(
+    <View>
+		  <View style={{width:50, height:50, backgroundColor:'purple'}} />
+		  <View style={{width:100, height:100, backgroundColor:'red'}} />
+		  <View style={{width:150, height:150, backgroundColor:'yellow'}} />
+    </View>
+	)
+}
+
 const Me =() => {
   const [text, setText] = useState(' ')
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <People name='ıııı' />
       <People name='Zey' />
       <Text  > Selam ! Benim adım {allName('Zeynep','Arslan')}. Senin adın ne ? :) </Text>
@@ -72,8 +82,9 @@ const Me =() => {
       <Cat cat='miyuv' />
       <Scroll />
       <List />
-      
-    </View>
+      <Style />
+
+    </ScrollView>
   )
 }
 
