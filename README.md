@@ -1,6 +1,7 @@
 # ReactNativeExercises
 
 `npm install`
+
 `npx expo start`
 
 These are simple applications I made to gain more experience in React native. 
